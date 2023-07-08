@@ -18,7 +18,7 @@ const Nav = () => {
     }, [])
   return (
     <nav className="flex-between w-full mb-16 pt-3">
-        <Link key="forLogo" href='/' className="flex gap-2 flex-center">
+        <Link href='/' className="flex gap-2 flex-center">
             <Image 
                 src="/assets/images/logo.svg"
                 alt="Promptopia Logo"
@@ -35,7 +35,7 @@ const Nav = () => {
         {/* desktop development */}
         <div className="sm:flex hidden">
             {session?.user ? (
-                <div key="desktop-buttons" className="flex gap-3 md:gap-5">
+                <div className="flex gap-3 md:gap-5">
                     <Link href="/create-prompt" className="black_btn">
                         Create Post
                     </Link>
@@ -54,8 +54,8 @@ const Nav = () => {
                 <>
                     {providers && Object.values(providers).map((provider)=>(
                         <button 
-                            key={providers.name} 
                             type='button' 
+                            key={providers.name} 
                             onClick={()=>signIn(provider.id)} 
                             className='black_btn'>
                                 Sign In
@@ -68,7 +68,7 @@ const Nav = () => {
         {/* mobile development */}
         <div className="sm:hidden flex relative">
             {session?.user ? (
-                <div key="mobile-buttons" className="flex">
+                <div className="flex">
                     <Image 
                         className="rounded-full"
                         src={session?.user.image}
@@ -112,8 +112,8 @@ const Nav = () => {
                 <>
                 {providers && Object.values(providers).map((provider)=>(
                     <button 
-                        key={providers.name} 
                         type='button' 
+                        key={providers.name} 
                         onClick={()=>signIn(provider.id)} 
                         className='black_btn'>
                             Sign In
@@ -122,6 +122,7 @@ const Nav = () => {
             </>  
             )}
         </div>
+
     </nav>
   )
 }
