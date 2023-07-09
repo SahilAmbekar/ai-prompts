@@ -8,7 +8,7 @@ const Profile = ({ name, desc, data, handleEdit, handleDelete }) => {
       </h1>
       <p className='desc text-left'>{desc}</p>
 
-      <div className='mt-10 prompt_layout'>
+      <div className='mt-10 prompt_layout mx-8'>
         {data.map((post) => (
           <PromptCard
             key={post._id}
@@ -21,5 +21,7 @@ const Profile = ({ name, desc, data, handleEdit, handleDelete }) => {
     </section>
   );
 };
+// Also, please make sure the outputs are short and should provide the top level details only.
 
+// #outputComplexity
 export default Profile;
